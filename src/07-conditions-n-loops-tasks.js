@@ -418,16 +418,17 @@ function evaluateTicTacToePosition(position) {
   const diag2 = [position[0][2], position[1][1], position[2][0]];
 
   const arr = [horiz1, horiz2, horiz3, vert1, vert2, vert3, diag1, diag2];
+
   for (let i = 0; i < arr.length; i += 1) {
     const pos = arr[i];
     if (!pos.includes(undefined)) {
       const isX = pos.every((ceil) => ceil === 'X');
-      const isO = pos.every((ceil) => ceil === 'O');
+      const isO = pos.every((ceil) => ceil === '0');
       if (isX) {
         return 'X';
       }
       if (isO) {
-        return 'O';
+        return '0';
       }
     }
   }
